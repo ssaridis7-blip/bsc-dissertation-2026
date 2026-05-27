@@ -1,0 +1,7 @@
+﻿.env
+venv/
+__pycache__/
+data/chroma_db/
+data/audit_logs/
+*.pyc
+.DS_Store

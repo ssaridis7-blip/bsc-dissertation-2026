@@ -1,0 +1,324 @@
+[
+  {
+    "test_id": "T01",
+    "category": "Contact Lookup",
+    "question": "Who is James Mitchell and what company does he work for?",
+    "reasoning_type": "single_source",
+    "answer": "James Mitchell is the Head of Procurement at TechVault Solutions.",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_interactions",
+      "crm_deals",
+      "crm_invoices"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 5,
+      "faithfulness_reasoning": "The assistant's answer accurately reflects the information provided in the retrieved context, stating that James Mitchell is the Head of Procurement at TechVault Solutions, which is fully supported by the data.",
+      "answer_relevancy": 4,
+      "relevancy_reasoning": "The answer provides a specific name and a company, which directly addresses the question. However, it does not provide additional context about who James Mitchell is, which could enhance the relevance.",
+      "response_latency_seconds": 4.105
+    }
+  },
+  {
+    "test_id": "T02",
+    "category": "Contact Lookup",
+    "question": "What is Elena Rossi's lead status and lead score?",
+    "reasoning_type": "single_source",
+    "answer": "Elena Rossi's lead status is \"Qualified Lead,\" and her lead score is 78.",
+    "sources_retrieved": [
+      "crm_contacts",
+      "sales_playbook.md",
+      "crm_interactions",
+      "crm_deals"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 4,
+      "faithfulness_reasoning": "The lead status of 'Qualified Lead' is accurate according to the context. However, the lead score of 78 is not explicitly mentioned in the retrieved context, making it a minor unsupported detail.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer directly provides both the lead status and lead score for Elena Rossi, fully addressing the question.",
+      "response_latency_seconds": 2.451
+    }
+  },
+  {
+    "test_id": "T03",
+    "category": "Invoice Query",
+    "question": "What invoices are currently pending?",
+    "reasoning_type": "single_source",
+    "answer": "The currently pending invoices are:\n\n1. **Invoice INV-2026-004**\n   - Amount: £62,000.00\n   - Company: Nordic Foods International\n   - Issue Date: 2026-03-15\n   - Due Date: 2026-04-15\n   - Description: Annual License - Professional Tier (200 seats) + Custom Integrations\n\n2. **Invoice INV-2026-002**\n   - Amount: £180,000.00\n   - Company: Pinnacle Financial Group\n   - Issue Date: 2026-03-01\n   - Due Date: 2026-04-01\n   - Description: Annual License - Premium Tier (500 seats) + AI Analytics Module\n\n3. **Invoice INV-2026-005**\n   - Amount: £12,500.00\n   - Description: Additional 50 seats - License Extension Q2 2026\n\nThese invoices are currently pending payment.",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_invoices"
+    ],
+    "metrics": {
+      "keyword_coverage": 0.75,
+      "source_precision": 1.0,
+      "faithfulness": 1,
+      "faithfulness_reasoning": "The assistant's answer contains fabricated information, specifically the inclusion of invoices INV-2026-002 and INV-2026-005, which are not present in the retrieved context.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The assistant's answer fully and directly addresses the question by providing a detailed list of currently pending invoices, including relevant information such as invoice numbers, amounts, companies, issue dates, due dates, and descriptions.",
+      "response_latency_seconds": 3.774
+    }
+  },
+  {
+    "test_id": "T04",
+    "category": "Deal Query",
+    "question": "What deals are currently in the negotiation stage?",
+    "reasoning_type": "single_source",
+    "answer": "The only deal currently in the negotiation stage is:\n\n- **Deal:** TechVault Q2 Expansion\n  - **Contact:** James Mitchell\n  - **Company:** TechVault Solutions\n  - **Value:** £12,500.00\n  - **Probability:** 90%\n  - **Expected Close:** 2026-04-15\n  - **Sales Rep:** Sarah Chen",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_deals"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 5,
+      "faithfulness_reasoning": "The assistant's answer is fully grounded in the retrieved context, accurately summarizing the only deal in the negotiation stage without any fabricated information.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The assistant's answer directly addresses the question by providing specific details about the deal currently in the negotiation stage, including relevant information such as the deal name, contact person, company, value, probability, expected close date, and sales representative.",
+      "response_latency_seconds": 2.776
+    }
+  },
+  {
+    "test_id": "T05",
+    "category": "Interaction History",
+    "question": "What were the last interactions with GreenLeaf Energy?",
+    "reasoning_type": "single_source",
+    "answer": "The last interactions with GreenLeaf Energy, specifically with Elena Rossi, are as follows:\n\n1. **Date:** 2026-03-18 (Call)\n   - **Subject:** Integration Requirements Discussion\n   - **Summary:** Elena raised concerns about compatibility with their legacy SAP system. Discussed middleware options. She requested a technical architecture document and needs to present it to the board in April.\n   - **Sentiment:** Neutral\n   - **Sales Rep:** Sarah Chen\n\n2. **Date:** 2026-03-05 (Email)\n   - **Subject:** Enterprise Package Inquiry\n   - **Summary:** Elena requested a detailed feature comparison between the Professional and Enterprise packages, particularly interested in real-time analytics and multi-site support.\n   - **Sentiment:** Positive\n   - **Sales Rep:** Sarah Chen",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_deals",
+      "crm_interactions"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 1,
+      "faithfulness_reasoning": "The assistant's answer contains fabricated information, specifically the details about the call on 2026-03-18, which is not present in the retrieved context. The only interaction mentioned in the context is the email from 2026-03-05.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer provides specific details about the last interactions with GreenLeaf Energy, including dates, subjects, summaries, sentiments, and the sales representative involved, which directly addresses the question.",
+      "response_latency_seconds": 3.651
+    }
+  },
+  {
+    "test_id": "T06",
+    "category": "Product Knowledge",
+    "question": "What pricing tiers does NexusFlow offer?",
+    "reasoning_type": "single_source",
+    "answer": "NexusFlow offers three pricing tiers:\n\n1. **Standard**: £28,000/year for up to 100 seats.\n2. **Professional**: £45,000/year for up to 250 seats.\n3. **Premium**: £120,000+/year for unlimited seats.\n\nAll pricing is annual, and custom enterprise quotes are available by contacting the sales team.",
+    "sources_retrieved": [
+      "product_faq.md",
+      "company_overview.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 1,
+      "faithfulness_reasoning": "The assistant's answer contains fabricated information about the pricing tiers of NexusFlow, which is not supported by the retrieved context.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer fully and directly addresses the question by providing detailed information about the pricing tiers offered by NexusFlow.",
+      "response_latency_seconds": 3.001
+    }
+  },
+  {
+    "test_id": "T07",
+    "category": "Product Knowledge",
+    "question": "Is NexusFlow GDPR compliant?",
+    "reasoning_type": "single_source",
+    "answer": "Yes, NexusFlow is fully GDPR compliant. We offer data processing agreements (DPAs), support data subject access requests (DSARs), provide data portability in standard formats, and allow complete data deletion upon request. Our data centers are located in the UK and EU.",
+    "sources_retrieved": [
+      "product_faq.md",
+      "company_overview.md",
+      "onboarding_guide.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 0.5,
+      "source_precision": 1.0,
+      "faithfulness": 1,
+      "faithfulness_reasoning": "The assistant's answer claims that NexusFlow is fully GDPR compliant and provides specific details about data processing agreements, data subject access requests, data portability, and data deletion, none of which are supported by the retrieved context.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer directly addresses the question of NexusFlow's GDPR compliance by providing specific details about their practices and measures related to GDPR.",
+      "response_latency_seconds": 1.906
+    }
+  },
+  {
+    "test_id": "T08",
+    "category": "Process Knowledge",
+    "question": "What is the customer onboarding process?",
+    "reasoning_type": "single_source",
+    "answer": "The customer onboarding process at NexusFlow Solutions is designed to get new customers operational within 2-4 weeks, depending on the complexity of their setup and any data migration requirements. The process consists of the following phases:\n\n### Phase 1: Kickoff (Day 1-3)\n- Customers receive a welcome email with login credentials.\n- A dedicated onboarding specialist is assigned (for Professional and Premium tiers).\n- A kickoff call is scheduled to review the implementation plan.\n- Success metrics are defined collaboratively with the customer.\n\n### Phase 2: Data Migration (Day 3-10)\n- Supported migration sources include direct imports from Salesforce, HubSpot, Pipedrive, Zoho CRM, file imports (CSV, Excel, vCard), and API migrations.\n- The migration process involves data export from the source system (customer responsibility), data mapping and transformation by the NexusFlow team, test imports, customer validation, full data import, and post-migration checks.\n\n### Phase 3: Training (Day 7-14)\n- Customers receive complimentary onboarding training, including a 2-hour platform overview session, role-specific training modules, access to a recorded training library, and support from a dedicated onboarding specialist for the first 30 days.\n\n### Phase 4: Go-Live and Optimization (Day 14-28)\n- A go-live checklist ensures all users have logged in, completed training, validated data migration, tested key workflows, configured integrations, customized reporting dashboards, and communicated support escalation paths.\n- Post-launch support includes daily check-in calls during the first week and weekly check-ins for the remaining onboarding period, along with a dedicated onboarding Slack channel for 30 days.\n\n### Phase 5: Handoff to Customer Success (Day 28+)\n- The onboarding specialist conducts a final review meeting, introduces the customer success manager for ongoing support, schedules the first Quarterly Business Review (QBR) for Day 90, sends an onboarding feedback survey, and formally closes the case in the onboarding tracker.\n\nThis structured approach aims to ensure a smooth transition for customers into using NexusFlow Solutions effectively.",
+    "sources_retrieved": [
+      "onboarding_guide.md",
+      "sales_playbook.md",
+      "product_faq.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 5,
+      "faithfulness_reasoning": "The assistant's answer is fully grounded in the retrieved context, accurately detailing the customer onboarding process at NexusFlow Solutions, including specific phases, timelines, and activities as outlined in the provided CRM guide.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer fully and directly addresses the question by providing a detailed overview of the customer onboarding process at NexusFlow Solutions, including specific phases and activities involved.",
+      "response_latency_seconds": 7.004
+    }
+  },
+  {
+    "test_id": "T09",
+    "category": "Sales Knowledge",
+    "question": "What is our discount approval matrix?",
+    "reasoning_type": "single_source",
+    "answer": "The discount approval matrix is as follows:\n\n- **Up to 10%**: Account Executive can approve\n- **11-20%**: Sales Manager approval required\n- **21-30%**: VP Sales approval required\n- **31%+**: CEO approval required (academic/non-profit exceptions apply)",
+    "sources_retrieved": [
+      "sales_playbook.md",
+      "product_faq.md",
+      "crm_interactions",
+      "crm_invoices",
+      "crm_contacts",
+      "crm_deals"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 4,
+      "faithfulness_reasoning": "The assistant's answer is mostly faithful to the context, as it outlines a discount approval matrix that aligns with typical corporate structures. However, the specific approval percentages and the mention of 'academic/non-profit exceptions' are not explicitly detailed in the retrieved context, which introduces minor unsupported details.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The assistant's answer directly and fully addresses the question by providing a clear and detailed discount approval matrix.",
+      "response_latency_seconds": 2.817
+    }
+  },
+  {
+    "test_id": "T10",
+    "category": "Sales Knowledge",
+    "question": "What is the win-back strategy for churned customers?",
+    "reasoning_type": "single_source",
+    "answer": "The win-back strategy for churned customers includes the following steps:\n\n1. Wait 90 days after churn before re-engagement.\n2. Lead with new features or improvements that address their stated exit reasons.\n3. Offer a \"welcome back\" discount of up to 20%, subject to Sales Manager approval.\n4. Propose a no-commitment 30-day trial of the latest version.\n5. Assign a senior account executive for the win-back attempt.",
+    "sources_retrieved": [
+      "sales_playbook.md",
+      "crm_contacts",
+      "crm_deals",
+      "onboarding_guide.md",
+      "company_overview.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 4,
+      "faithfulness_reasoning": "The assistant's answer is mostly faithful to the retrieved context, accurately summarizing the key steps of the win-back strategy. However, the mention of a 'welcome back discount of up to 20%' and 'no-commitment 30-day trial' are not explicitly stated in the provided context, which introduces minor unsupported details.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer fully and directly addresses the question by outlining a clear and structured win-back strategy for churned customers, detailing specific steps to re-engage them.",
+      "response_latency_seconds": 3.996
+    }
+  },
+  {
+    "test_id": "T11",
+    "category": "Multi-hop",
+    "question": "Give me a summary of Sarah Chen's pipeline - what deals is she managing and what is the total value?",
+    "reasoning_type": "multi_hop",
+    "answer": "Sarah Chen is managing the following deals in her pipeline:\n\n1. **GreenLeaf Enterprise Migration**\n   - Value: £85,000.00\n   - Stage: Qualification\n   - Probability: 50%\n   - Expected Close: 2026-06-30\n\n2. **HealthBridge NHS-Compliant Solution**\n   - Value: £95,000.00\n   - Stage: Qualification\n   - Probability: 40%\n   - Expected Close: 2026-08-01\n\n3. **TechVault Q2 Expansion**\n   - Value: £12,500.00\n   - Stage: Negotiation\n   - Probability: 90%\n   - Expected Close: 2026-04-15\n\n4. **MediaPulse Full Deployment**\n   - Value: £38,000.00\n   - Stage: Proposal\n   - Probability: 65%\n   - Expected Close: 2026-04-30\n\n5. **Nova Retail Win-Back**\n   - Value: £35,000.00\n   - Stage: Lost\n   - Probability: 10%\n   - Expected Close: 2026-09-01\n\n**Total Value of Deals:** £85,000.00 + £95,000.00 + £12,500.00 + £38,000.00 + £35,000.00 = **£265,500.00**\n\nIn summary, Sarah Chen's pipeline consists of five deals with a total value of **£265,500.00**.",
+    "sources_retrieved": [
+      "company_overview.md",
+      "crm_deals",
+      "crm_interactions"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 1,
+      "faithfulness_reasoning": "The assistant's answer contains fabricated information, as the retrieved context only mentions one deal (GreenLeaf Enterprise Migration) and does not provide details about the other four deals listed in the response.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer fully and directly addresses the question by providing a detailed summary of Sarah Chen's pipeline, including the specific deals she is managing and the total value of those deals.",
+      "response_latency_seconds": 6.04
+    }
+  },
+  {
+    "test_id": "T12",
+    "category": "Multi-hop",
+    "question": "Which customers have both pending invoices and active deals?",
+    "reasoning_type": "multi_hop",
+    "answer": "The customers with pending invoices and active deals are:\n\n1. **Pinnacle Financial Group**\n   - **Pending Invoice**: INV-2026-002 for £180,000.00 (Annual License - Premium Tier (500 seats) + AI Analytics Module)\n   - **Active Deal**: No active deal listed.\n\n2. **Nordic Foods International**\n   - **Pending Invoice**: INV-2026-004 for £62,000.00 (Annual License - Professional Tier (200 seats) + Custom Integrations)\n   - **Active Deal**: No active deal listed.\n\nCurrently, there are no customers with both pending invoices and active deals based on the provided context. If you need further assistance or details, please let me know!",
+    "sources_retrieved": [
+      "crm_contacts",
+      "company_overview.md",
+      "crm_invoices"
+    ],
+    "metrics": {
+      "keyword_coverage": 0.5,
+      "source_precision": 0.5,
+      "faithfulness": 2,
+      "faithfulness_reasoning": "The assistant's answer contains fabricated information, such as the details of pending invoices and active deals for customers that were not mentioned in the retrieved context. Specifically, it incorrectly states that there are no active deals listed for Pinnacle Financial Group and Nordic Foods International, despite the context indicating that there is an active deal for Pinnacle Financial Group.",
+      "answer_relevancy": 2,
+      "relevancy_reasoning": "The answer does not provide any customers that meet the criteria of having both pending invoices and active deals, which is the main focus of the question. Instead, it lists customers with pending invoices but states that there are no active deals, making the response mostly irrelevant.",
+      "response_latency_seconds": 3.821
+    }
+  },
+  {
+    "test_id": "T13",
+    "category": "Multi-hop",
+    "question": "Tell me about David Okafor - his contact details, recent interactions, and any outstanding invoices.",
+    "reasoning_type": "multi_hop",
+    "answer": "David Okafor's contact details are as follows:\n\n- **Company**: Pinnacle Financial Group\n- **Job Title**: Chief Technology Officer\n- **Email**: d.okafor@pinnacle-finance.com\n- **Phone**: +44 20 3856 1247\n- **Industry**: Financial Services\n- **Lead Status**: Customer\n- **Lead Score**: 95\n- **Assigned Rep**: Mark Thompson\n- **Last Contact**: 2026-03-25\n\n**Recent Interactions**:\n1. **2026-03-15 (Call)**: Security Compliance Review\n   - Summary: David's security team completed their audit. Two minor findings related to data retention policies. Agreed to address within 2 weeks. No blockers for continued deployment.\n   - Sentiment: Neutral\n   - Sales Rep: Mark Thompson\n\n2. **2026-03-25 (Meeting)**: Premium Tier Onboarding Review\n   - Summary: Reviewed onboarding progress for premium tier. David's team completed 80% of setup. Discussed AI analytics module roadmap. David wants early access to beta. Contract value increased to £180,000/year.\n   - Sentiment: Positive\n   - Sales Rep: Mark Thompson\n\n**Outstanding Invoices**:\n- **Invoice ID**: INV-2026-002\n  - **Amount**: £180,000.00\n  - **Status**: Pending\n  - **Issue Date**: 2026-03-01\n  - **Due Date**: 2026-04-01\n  - **Description**: Annual License - Premium Tier (500 seats) + AI Analytics Module\n  - **Payment Date**: Not yet paid\n\nAdditionally, there is an overdue invoice:\n- **Invoice ID**: INV-2025-018\n  - **Amount**: £5,500.00\n  - **Status**: Overdue\n  - **Description**: Proof of Concept - Trial Period (3 months)",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_interactions",
+      "crm_invoices"
+    ],
+    "metrics": {
+      "keyword_coverage": 1.0,
+      "source_precision": 1.0,
+      "faithfulness": 4,
+      "faithfulness_reasoning": "The assistant's answer is mostly faithful to the retrieved context, providing accurate contact details, recent interactions, and outstanding invoices. However, it includes additional details such as 'Lead Score' and 'Assigned Rep' that were not present in the retrieved context, which slightly detracts from its faithfulness.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "The answer fully and directly addresses the question by providing David Okafor's contact details, summarizing recent interactions, and detailing outstanding invoices.",
+      "response_latency_seconds": 8.0
+    }
+  },
+  {
+    "test_id": "T14",
+    "category": "Hallucination Test",
+    "question": "What is the phone number for John Smith at DataCorp?",
+    "reasoning_type": "hallucination_test",
+    "answer": "I don't have that information.",
+    "sources_retrieved": [
+      "crm_interactions",
+      "crm_deals",
+      "crm_contacts",
+      "product_faq.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 0.2,
+      "source_precision": 1.0,
+      "faithfulness": 5,
+      "faithfulness_reasoning": "The assistant correctly indicated that it does not have the information, avoiding the fabrication of a phone number.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "Hallucination test",
+      "response_latency_seconds": 1.816
+    }
+  },
+  {
+    "test_id": "T15",
+    "category": "Hallucination Test",
+    "question": "What was the revenue for Q4 2025?",
+    "reasoning_type": "hallucination_test",
+    "answer": "I don't have that information. The context provided does not include any details about revenue for Q4 2025.",
+    "sources_retrieved": [
+      "crm_contacts",
+      "crm_invoices",
+      "crm_interactions",
+      "crm_deals",
+      "company_overview.md"
+    ],
+    "metrics": {
+      "keyword_coverage": 0.4,
+      "source_precision": 1.0,
+      "faithfulness": 5,
+      "faithfulness_reasoning": "The assistant correctly indicated that it does not have information about Q4 2025, avoiding any fabrication.",
+      "answer_relevancy": 5,
+      "relevancy_reasoning": "Hallucination test",
+      "response_latency_seconds": 1.848
+    }
+  }
+]

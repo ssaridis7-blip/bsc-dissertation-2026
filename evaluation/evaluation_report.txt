@@ -1,0 +1,93 @@
+
+======================================================================
+  EVALUATION REPORT — RAG-Based CRM Business Assistant
+  Date: 2026-04-20 20:13
+  Test Cases: 15
+======================================================================
+
+1. OVERALL METRICS
+────────────────────────────────────────
+  Keyword Coverage (Completeness):  82.3%
+  Source Precision (Retrieval):      96.7%
+  Faithfulness (Grounding):          3.20 / 5.00
+  Answer Relevancy:                  4.73 / 5.00
+  Avg Response Latency:              3.80s
+  Max Response Latency:              8.00s
+  Min Response Latency:              1.82s
+
+2. PERFORMANCE BY CATEGORY
+────────────────────────────────────────
+  Contact Lookup:
+    Keyword Coverage:  100.0%
+    Faithfulness:      4.50/5
+    Answer Relevancy:  4.50/5
+    Avg Latency:       3.28s
+
+  Invoice Query:
+    Keyword Coverage:  75.0%
+    Faithfulness:      1.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       3.77s
+
+  Deal Query:
+    Keyword Coverage:  100.0%
+    Faithfulness:      5.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       2.78s
+
+  Interaction History:
+    Keyword Coverage:  100.0%
+    Faithfulness:      1.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       3.65s
+
+  Product Knowledge:
+    Keyword Coverage:  75.0%
+    Faithfulness:      1.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       2.45s
+
+  Process Knowledge:
+    Keyword Coverage:  100.0%
+    Faithfulness:      5.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       7.00s
+
+  Sales Knowledge:
+    Keyword Coverage:  100.0%
+    Faithfulness:      4.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       3.41s
+
+  Multi-hop:
+    Keyword Coverage:  83.3%
+    Faithfulness:      2.33/5
+    Answer Relevancy:  4.00/5
+    Avg Latency:       5.95s
+
+  Hallucination Test:
+    Keyword Coverage:  30.0%
+    Faithfulness:      5.00/5
+    Answer Relevancy:  5.00/5
+    Avg Latency:       1.83s
+
+3. REASONING TYPE ANALYSIS
+────────────────────────────────────────
+  Single-Source Queries (10 tests):
+    Avg Keyword Coverage:  92.5%
+    Avg Faithfulness:      3.10/5
+
+  Multi-Hop Queries (3 tests):
+    Avg Keyword Coverage:  83.3%
+    Avg Faithfulness:      2.33/5
+
+  Hallucination Tests (2 tests):
+    Passed: 2/2
+
+4. SYSTEM REQUIREMENTS COMPLIANCE
+────────────────────────────────────────
+  Response Time < 5s:    12/15 passed
+  Retrieval Precision:   96.7% (target: >70%)
+  Faithfulness >= 4/5:   9/15 passed
+
+======================================================================
